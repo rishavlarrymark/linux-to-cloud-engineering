@@ -1,1 +1,88 @@
-day2-output.txt placeholder output.
+DAY 2 — FILE SYSTEM TREE & NAVIGATION OUTPUT
+--------------------------------------------
+
+1) Current Directory (pwd):
+/home/rishav
+
+
+2) Directory Listing (ls -l):
+total 64
+-rw-rw-r-- 1 rishav rishav   15 Dec  7 21:03 backup-file2.txt
+drwxr-xr-x 3 rishav rishav 4096 Dec  4 20:58 Desktop
+drwxr-xr-x 2 rishav rishav 4096 Dec  4 19:54 Documents
+drwxr-xr-x 2 rishav rishav 4096 Dec  4 19:54 Downloads
+-rw-rw-r-- 1 rishav rishav   15 Dec  7 21:12 file1-renamed.txt
+-rw-rw-r-- 1 rishav rishav   56 Dec  7 21:39 file2.txt
+-rw-rw-r-- 1 rishav rishav    9 Dec  7 21:47 fileA.txt
+-rw-rw-r-- 1 rishav rishav   15 Dec  7 20:47 fileB.txt
+drwxrwxr-x 5 rishav rishav 4096 Dec  7 09:28 localstack-env
+-rw-rw-r-- 1 rishav rishav   36 Dec  7 20:47 longfile.txt
+drwxr-xr-x 2 rishav rishav 4096 Dec  4 19:54 Music
+-rw-rw-r-- 1 rishav rishav   14 Dec  7 21:50 new.txt
+drwxr-xr-x 2 rishav rishav 4096 Dec  4 19:54 Pictures
+drwxr-xr-x 2 rishav rishav 4096 Dec  4 19:54 Public
+drwxr-xr-x 2 rishav rishav 4096 Dec  4 19:54 Templates
+drwxr-xr-x 2 rishav rishav 4096 Dec  4 19:54 Videos
+
+
+3) All Files Including Hidden (ls -a):
+.                 .cache     .face              .gnupg          .mozilla  .ssh
+..                .config    .face.icon         .ICEauthority   Music     .sudo_as_admin_successful
+backup-file2.txt  Desktop    file1-renamed.txt  .java           new.txt   Templates
+.bash_logout      .dmrc      file2.txt          .local          Pictures  .profile
+.bashrc           Documents  fileA.txt          localstack-env  Public    Videos
+.bashrc.original  Downloads  fileB.txt          longfile.txt    .vboxclient-* (multiple)
+.xsession-errors  .zshrc     .zsh_history       .Xauthority     .cache    .config
+
+
+4) File Type Check (file /etc/hosts):
+/etc/hosts: ASCII text
+
+
+5) Detailed File Info (stat /etc/passwd):
+  File: /etc/passwd
+  Size: 3288    Blocks: 8    IO Block: 4096   regular file
+Device: 8,1     Inode: 786036     Links: 1
+Access: (0644/-rw-r--r--)  Uid: (0/root)   Gid: (0/root)
+Access: 2025-12-06 23:59:00
+Modify: 2025-12-04 20:17:00
+Change: 2025-12-04 20:17:00
+Birth: 2025-12-04 20:17:00
+
+
+6) Disk Usage (df -h):
+Filesystem      Size  Used  Avail Use% Mounted on
+udev            883M     0   883M   0% /dev
+tmpfs           198M  976K   197M   1% /run
+/dev/sda1        24G   19G   3.6G  84% /
+tmpfs           986M  4.0K   986M   1% /dev/shm
+tmpfs           986M   40K   986M   1% /tmp
+tmpfs           198M  104K   198M   1% /run/user/1000
+
+
+7) Directory Size Summary (du -h --max-depth=1 ~):
+101M    /home/rishav/.cache
+120K    /home/rishav/.local
+4.0K    /home/rishav/Downloads
+8.0K    /home/rishav/.gnupg
+8.0K    /home/rishav/.ssh
+4.0K    /home/rishav/Music
+62M     /home/rishav/.mozilla
+248K    /home/rishav/.config
+4.0K    /home/rishav/Public
+4.0K    /home/rishav/Videos
+20K     /home/rishav/Desktop
+146M    /home/rishav/localstack-env
+4.0K    /home/rishav/Documents
+16K     /home/rishav/.java
+4.0K    /home/rishav/Pictures
+4.0K    /home/rishav/Templates
+308M    /home/rishav
+
+
+STATUS:
+✓ File system navigation commands executed
+✓ Hidden files viewed
+✓ System directories analyzed
+✓ Disk usage + folder usage captured
+
