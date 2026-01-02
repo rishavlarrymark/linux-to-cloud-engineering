@@ -106,7 +106,7 @@ Linux-learning/
 │
 └── README.md                   # You are here
 
-
+```text
 🛠 How the Work Is Organized
 
 Every technical domain follows the same professional structure:
