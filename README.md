@@ -51,60 +51,60 @@ This is how **production engineers actually work** — quietly, precisely, and v
 ```text
 Linux-learning/
 │
-├── 01-linux-core/              # Linux OS fundamentals
-│   ├── notes/                  # Concepts: why systems behave the way they do
-│   ├── scripts/                # Shell automation & utilities
-│   ├── outputs/                # Real command outputs (execution proof)
+├── 01-linux-core/        # Linux OS internals: filesystem, processes, permissions, services
+│   ├── notes/            # Why Linux behaves the way it does (kernel, userspace, files)
+│   ├── scripts/          # Shell automation for system operations
+│   ├── outputs/          # Real command outputs (ls, ps, mount, permissions)
 │   └── README.md
 │
-├── 02-bash-scripting/          # Bash scripting for automation
-│   ├── notes/
-│   ├── scripts/
-│   ├── outputs/
+├── 02-bash-scripting/    # Automation fundamentals for Linux & cloud environments
+│   ├── notes/            # Bash logic, flow control, text processing
+│   ├── scripts/          # Reusable automation scripts
+│   ├── outputs/          # Script execution evidence
 │   └── README.md
 │
-├── 03-networking/              # Linux & cloud networking foundations
-│   ├── notes/
-│   ├── labs/
-│   ├── outputs/
+├── 03-networking/        # IP addressing, routing logic, internet access, network security, DNS resolution
+│   ├── notes/            # How traffic flows (CIDR, routes, DNS, subnets)
+│   ├── labs/             # Subnetting, routing, IGW/NAT, security experiments
+│   ├── outputs/          # Networking commands & troubleshooting evidence
 │   └── README.md
 │
-├── 04-cloud-aws/               # AWS core services (OS-first perspective)
-│   ├── iam/
-│   ├── ec2/
-│   ├── vpc/
+├── 04-cloud-aws/         # AWS core services from an OS & networking-first perspective
+│   ├── iam/              # Identity, permissions, and access boundaries
+│   ├── ec2/              # Compute, AMIs, bootstrapping, OS-level control
+│   ├── vpc/              # Subnets, routing, gateways, security design
 │   └── README.md
 │
-├── 05-git-github/              # Version control as used by real teams
-│   ├── notes/
-│   ├── practice/
+├── 05-git-github/        # Version control as used in real engineering teams
+│   ├── notes/            # Git internals, workflows, branching strategies
+│   ├── practice/         # Hands-on repo operations & recovery scenarios
 │   └── README.md
 │
-├── 06-terraform/               # Infrastructure as Code (AWS-focused)
-│   ├── main.tf
-│   ├── providers.tf
-│   ├── variables.tf
-│   ├── outputs.tf
+├── 06-terraform/         # Infrastructure as Code with state, dependency, and lifecycle control
+│   ├── main.tf           # Core infrastructure definitions
+│   ├── providers.tf     # Cloud provider configuration
+│   ├── variables.tf     # Input abstraction & reusability
+│   ├── outputs.tf       # Infrastructure outputs
 │   └── README.md
 │
-├── 07-docker/                  # Containers as an OS abstraction
-│   ├── notes/
-│   ├── dockerfiles/
-│   ├── compose/
+├── 07-docker/            # Containers as an OS-level abstraction
+│   ├── notes/            # Namespaces, cgroups, image layering
+│   ├── dockerfiles/      # Image build definitions
+│   ├── compose/          # Multi-container orchestration (local)
 │   └── README.md
 │
-├── 08-kubernetes/              # Orchestration & manifests (advanced layer)
-│   ├── notes/
-│   ├── manifests/
-│   ├── helm/
+├── 08-kubernetes/        # Orchestration, scheduling, and declarative systems
+│   ├── notes/            # Pods, services, control plane concepts
+│   ├── manifests/        # YAML definitions (deployments, services)
+│   ├── helm/             # Templated application packaging
 │   └── README.md
 │
-├── projects/                   # Applied, real-world projects
-│   ├── linux-mini-projects/
-│   ├── devops-projects/
-│   └── cloud-projects/
+├── projects/             # Applied, real-world engineering work
+│   ├── linux-mini-projects/   # Linux system problem-solving
+│   ├── devops-projects/       # CI/CD, automation, infra workflows
+│   └── cloud-projects/        # End-to-end cloud architectures
 │
-└── README.md                   # You are here
+└── README.md             # You are here
 ```
 
 🛠 How the Work Is Organized (Intentional by Design)
@@ -207,3 +207,4 @@ Cloud is Linux — automated, distributed, and billed.
 
 This repository exists as proof that I understand that reality
 and can operate within it.
+
