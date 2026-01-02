@@ -104,9 +104,9 @@ Linux-learning/
 │   ├── devops-projects/
 │   └── cloud-projects/
 │
-...
 └── README.md                   # You are here
 
+```
 🛠 How the Work Is Organized
 
 Every technical domain follows the same professional structure:
@@ -196,5 +196,6 @@ Cloud is not magic.
 Cloud is Linux — automated, scaled, and billed.
 
 This repository is my proof that I understand that truth.
+
 
 
