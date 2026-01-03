@@ -4,7 +4,7 @@
 ---
 
 ## Foundation & Intent
-
+“This repository documents the system-level foundation required to operate and build production cloud infrastructure.”
 This repository is structured as a **production system**, not a learning artifact.  
 Every directory, script, and output exists to reflect how real infrastructure is **built, operated, debugged, and evolved over time**.
 
@@ -211,3 +211,4 @@ Cloud is **Linux — automated, distributed, and billed**.
 
 This repository exists as proof that I understand that reality  
 and can operate within it.
+
