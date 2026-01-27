@@ -1,4 +1,4 @@
-# 📁 FILESYSTEM & NAVIGATION — Production Notes
+# 📁 FILESYSTEM & NAVIGATION — Production Operational Scenarios
 
 ## `pwd`
 - **Situation:** unsure where you are  
