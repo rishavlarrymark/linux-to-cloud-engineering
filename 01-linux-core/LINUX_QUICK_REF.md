@@ -3,7 +3,7 @@
 
 ---
 
-## DAY 1 — Filesystem & Navigation
+## Filesystem & Navigation
 - `pwd` → current location
 - `ls -la` → all files + permissions
 - `cd` → move directory
@@ -15,7 +15,7 @@
 
 ---
 
-## DAY 2 — File Operations
+## File Operations
 - `touch` → create empty file
 - `mkdir -p` → nested dirs
 - `cp` → copy
@@ -27,7 +27,7 @@
 
 ---
 
-## DAY 3 — Viewing & Logs
+## Viewing & Logs
 - `less` → safe file view
 - `cat` → small files only
 - `head` → start of file
@@ -38,7 +38,7 @@
 
 ---
 
-## DAY 4 — Permissions & Ownership
+## Permissions & Ownership
 - `r w x` → read write execute
 - `user | group | others`
 - symbolic → `u+x g-r o+w a+rwx`
@@ -50,11 +50,10 @@
 
 ---
 
-## DAY 5 — Users & Groups
+## Users & Groups
 (add later)
 
 ---
 
-## DAY 6 — Processes
+## Processes
 (add later)
-
