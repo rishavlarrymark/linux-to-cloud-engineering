@@ -1,204 +1,83 @@
-📘 DAY 2 — FILE SYSTEM TREE + 18 COMMANDS (Full Notebook Notes, Clean Version)
-
-🔥 Day 2 Oath (Linux Navigation Oath)
-
-
-
-“I will not get lost in Linux.
-
-I understand the file system tree,
-
-and I walk through directories with confidence.”
-
-
-
-🗂️ 1. Linux File System Structure
-
-
-
-Linux file system starts from / (root).
-
-
-
-Important Directories
-
-
-
-/ — Root directory (top of all)
-
-
-
-/home — User home folders
-
-
-
-/etc — Config files
-
-
-
-/var — Logs, cache, spool
-
-
-
-/usr — Installed apps, libraries
-
-
-
-/bin — Essential commands
-
-
-
-/sbin — System admin tools
-
-
-
-/tmp — Temporary files
-
-
-
-/proc — Virtual system info
-
-
-
-/dev — Devices as files
-
-
-
-👉 Simple Line:
-
-Everything in Linux is a file.
-
-
-
-🧭 2. 18 Essential File System Commands
-
-1\. pwd — Print current working directory
-
-2\. ls — List files
-
-3\. ls -l — Detailed listing
-
-4\. ls -a — Show hidden files
-
-5\. ls -lh — Human readable sizes
-
-6\. cd folder — Enter folder
-
-7\. cd .. — Go back
-
-8\. cd / — Go to root
-
-9\. cd ~ — Go to home
-
-10\. file filename — Show file type
-
-11\. stat filename — Deep file info
-
-12\. tree — Visual folder structure
-
-13\. du -h — Folder size
-
-14\. df -h — Disk usage
-
-15\. mkdir folder — Make folder
-
-16\. rmdir folder — Remove empty folder
-
-17\. touch file — Create empty file
-
-18\. echo $PWD — Show path variable
-
-🔍 3. Absolute vs Relative Paths
-
-Absolute Path
-
-
-
-Starts from root /
-
-Example: /home/rishav/Documents
-
-
-
-Relative Path
-
-
-
-Based on where you currently are
-
-Example: cd ../Downloads
-
-
-
-📒 4. What You Explored Today
-
-
-
-✔ Moved around Linux directories
-
-✔ Explored system folders
-
-✔ Checked file types
-
-✔ Checked permissions + metadata
-
-✔ Understood how Linux organizes everything
-
-
-
-🧠 5. Quick Revision Cheatsheet
-
-
-
-/ = root
-
-
-
-/etc = settings
-
-
-
-/var = logs
-
-
-
-/usr = programs
-
-
-
-/home = user data
-
-
-
-cd .. = go back
-
-
-
-file = identify file
-
-
-
-stat = deep info
-
-
-
-df -h = disk
-
-
-
-du -h = folder size
-
-
-
-🎯 6. Core Idea of Day 2
-
-
-
-You learned how to navigate Linux confidently.
-
-From now on, you can explore any server without fear.
-
-
-
-❤️ Day 2 Complete.
+# 📁 FILE OPERATIONS — Production Operational Scenarios
+
+## `touch`
+- **Situation:** need file placeholder or update timestamp  
+- **Symptom:** application expects file but it doesn’t exist  
+- **Root cause:** missing empty file  
+- **Fix:** create file using `touch`  
+
+---
+
+## `mkdir`
+- **Situation:** new project or service directory required  
+- **Symptom:** files dumped in wrong location  
+- **Root cause:** directory not created beforehand  
+- **Fix:** create directory before placing files  
+
+---
+
+## `mkdir -p`
+- **Situation:** nested directories needed  
+- **Symptom:** directory creation fails mid-path  
+- **Root cause:** parent directories missing  
+- **Fix:** create full directory tree in one command  
+
+---
+
+## `cp`
+- **Situation:** backup or duplicate file needed  
+- **Symptom:** original file modified or lost  
+- **Root cause:** no backup before change  
+- **Fix:** copy file before editing  
+⚠️ **Risk:** overwriting destination without confirmation  
+
+---
+
+## `mv`
+- **Situation:** rename or relocate files  
+- **Symptom:** file “disappeared” from original location  
+- **Root cause:** move used instead of copy  
+- **Fix:** verify destination path after move  
+
+---
+
+## `rm`
+- **Situation:** cleanup unwanted files  
+- **Symptom:** important file permanently deleted  
+- **Root cause:** wrong path or blind deletion  
+- **Fix:** verify file before removal  
+⚠️ **Risk:** deletion is irreversible  
+
+---
+
+## `rm -r`
+- **Situation:** remove directory with contents  
+- **Symptom:** entire directory tree lost  
+- **Root cause:** recursive delete on wrong path  
+- **Fix:** double-check directory before execution  
+⚠️ **Risk:** high blast radius  
+
+---
+
+## `rmdir`
+- **Situation:** remove empty directory  
+- **Symptom:** command fails  
+- **Root cause:** directory not empty  
+- **Fix:** ensure directory is empty before removal  
+
+---
+
+## `stat`
+- **Situation:** file behaving unexpectedly  
+- **Symptom:** permission, time, or size confusion  
+- **Root cause:** misunderstood file metadata  
+- **Fix:** inspect file metadata  
+
+---
+
+## `file`
+- **Situation:** unsure about actual file type  
+- **Symptom:** file opens or executes incorrectly  
+- **Root cause:** extension does not match content  
+- **Fix:** identify real file type via content  
 
