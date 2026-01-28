@@ -33,32 +33,21 @@ Rule: Every failure belongs to ONE step in the flow.
 
 ---
 
-## FAILURE SCENARIOS (ADMIN THINKING)
+## Failure Thinking
 
-- Nothing works → End System / Medium
-- Service unavailable → Service
-- Wrong response → Application Protocol
-- Request timeout → Transport
-- No route / unreachable → Network (IP)
-- Silent or inconsistent issues → Helpers
+**Rule:**  
+Check failures in this order.
 
----
-
-## FAILURE EXAMPLES (REAL WORLD)
-
-- No network at all → End system not ready
-- Website not opening → Service issue
-- HTTPS fails on HTTP → Protocol issue
-- Request hangs → Transport blocked
-- No route to host → IP / routing issue
-- No IP or ping fails → Helper issue
-- Wi-Fi off / cable unplugged → Medium issue
+- Nothing works → End System / Medium  
+- Network works, service not → Service  
+- Service responds wrong → Application Protocol  
+- Request hangs → Transport  
+- Unreachable / no route → Network (IP)  
+- Weird / silent issues → Helpers  
 
 ---
 
 ## ADMIN RULE (FINAL)
-
-Day-1 networking is not about fixing problems.  
 It is about identifying **where** the problem is in the flow.
 
 ---
@@ -66,3 +55,4 @@ It is about identifying **where** the problem is in the flow.
 ## STATUS
 
 - Ready for OSI & TCP/IP
+
