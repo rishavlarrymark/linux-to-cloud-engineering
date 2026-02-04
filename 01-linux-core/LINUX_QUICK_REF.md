@@ -51,7 +51,18 @@
 ---
 
 ## Users & Groups
-(add later)
+## Users & Groups (DAY 5)
+- `id user` → user exists?
+- `groups user` → user’s groups
+- `getent passwd user` → user DB entry
+- `getent group group` → group exists
+- `useradd -m -s /bin/bash user` → create login user
+- `passwd user` → set password
+- `groupadd group` → create group
+- `usermod -aG group user` → add user to group
+- `sudo -l` → allowed sudo actions
+- `usermod -aG sudo user` → grant sudo
+- `userdel -r user` → delete user + home
 
 ---
 
