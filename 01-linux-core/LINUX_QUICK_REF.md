@@ -51,7 +51,6 @@
 ---
 
 ## Users & Groups
-## Users & Groups (DAY 5)
 - `id user` → user exists?
 - `groups user` → user’s groups
 - `getent passwd user` → user DB entry
@@ -66,7 +65,7 @@
 
 ---
 
-## System, CPU, Memory & Disk (DAY 6)
+## System, CPU, Memory & Disk
 - `uptime` → system runtime + load
 - `top` → live CPU processes
 - `htop` → visual CPU/core view
