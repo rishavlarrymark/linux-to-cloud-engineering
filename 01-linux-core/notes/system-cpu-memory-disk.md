@@ -139,7 +139,7 @@
 
 ---
 
-## DAY 6 OPERATOR LOCK
+## DAY OPERATOR LOCK
 
 - CPU issue → top, mpstat
 - Memory issue → free, vmstat
