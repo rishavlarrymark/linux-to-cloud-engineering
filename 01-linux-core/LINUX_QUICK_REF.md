@@ -66,5 +66,21 @@
 
 ---
 
+## System, CPU, Memory & Disk (DAY 6)
+- `uptime` → system runtime + load
+- `top` → live CPU processes
+- `htop` → visual CPU/core view
+- `mpstat -P ALL 2` → per-core CPU usage
+- `free -h` → memory availability
+- `vmstat 2` → CPU + memory + IO wait
+- `df -h` → disk usage
+- `df -T` → filesystem type
+- `df -i` → inode usage
+- `du -sh *` → directory sizes
+- `du -sh /var/*` → space hogs
+- `ls -li` → inode numbers
+- `mount` → mounted filesystems
+- `umount` → detach filesystem
+
 ## Processes
 (add later)
