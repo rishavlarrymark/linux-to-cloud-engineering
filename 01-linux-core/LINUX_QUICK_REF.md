@@ -81,5 +81,25 @@
 - `mount` → mounted filesystems
 - `umount` → detach filesystem
 
-## Processes
+---
+
+## Process Management & Runtime Control
+- `ps aux` → list all running processes
+- `ps -fp PID` → detailed information for a specific PID
+- `pgrep name` → get PID by process name
+- `kill PID` → graceful termination (SIGTERM)
+- `kill -9 PID` → force termination (SIGKILL)
+- `nice -n 10 cmd` → start process with lower priority
+- `renice 5 PID` → modify priority of running process
+- `ss -tulnp` → show listening ports and owning processes
+- `lsof -i :PORT` → identify process using a specific port
+- `lsof -p PID` → list files opened by a process
+- `strace -p PID` → trace system calls of a running process
+- `sleep 300 &` → run process in background
+- `jobs` → list background jobs (current shell)
+- `fg %1` → move background job to foreground
+- `bg %1` → resume stopped job in background
+- `/proc/PID` → kernel-level process information
+
+## Disk & Storage Management
 (add later)
