@@ -1,3 +1,5 @@
+# 💽 DISK & STORAGE — Production Operational Scenarios
+
 ### `df -h`
 
 - **Situation:** App reports “No space left on device”  
