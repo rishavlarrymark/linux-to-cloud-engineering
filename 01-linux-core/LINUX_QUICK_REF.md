@@ -101,5 +101,29 @@
 - `bg %1` → resume stopped job in background
 - `/proc/PID` → kernel-level process information
 
+---
+
 ## Disk & Storage Management
+- `lsblk` → block devices overview
+- `lsblk -f` → filesystem + UUID
+- `blkid` → UUID details
+- `df -h` → disk usage (human)
+- `df -H` → disk usage (decimal)
+- `df -T` → filesystem type
+- `df -i` → inode usage
+- `du -sh *` → directory size summary
+- `du -sh /*` → root-level usage
+- `du -sh /var/*` → log growth check
+- `ncdu -x /` → interactive disk analyzer (same FS only)
+- `mount` → show mounted filesystems
+- `mount /dev/sdb1 /data` → mount volume
+- `umount /data` → unmount volume
+- `/etc/fstab` → persistent mount config
+- `lsof | grep deleted` → hidden disk usage
+- `tune2fs -l /dev/sdX` → reserved blocks info
+- `resize2fs /dev/sdX` → resize ext filesystem
+- `xfs_growfs /mount` → grow XFS filesystem
+- `fsck /dev/sdX` → filesystem check
+
+## Networking & Connectivity
 (add later)
