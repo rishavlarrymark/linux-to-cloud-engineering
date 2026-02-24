@@ -4,7 +4,7 @@
 
 # How Networking Actually Works
 
-## Core Concepts
+### Core Concepts
 - Network → devices communicating
 - Client → initiates
 - Server → responds
@@ -14,13 +14,13 @@
 - TCP → reliable
 - UDP → fast
 
-## Common Ports
+### Common Ports
 - 80 → HTTP
 - 443 → HTTPS
 - 22 → SSH
 - 53 → DNS
 
-## Traffic Flow
+### Traffic Flow
 Client → DNS → IP → TCP → TLS → HTTP → Response
 
 Rule:
@@ -30,7 +30,7 @@ Debug in traffic order.
 
 # OSI & TCP/IP
 
-## OSI Focus (L3–L7)
+### OSI Focus (L3–L7)
 - L7 → Application (HTTP, DNS)
 - L6 → TLS
 - L5 → Session
@@ -40,13 +40,13 @@ Debug in traffic order.
 Rule:
 Start at L3 → then L4 → then L7
 
-## TCP/IP Model
+### TCP/IP Model
 - Application
 - Transport
 - Internet
 - Network Access
 
-## Failure Mapping
+### Failure Mapping
 - No route → L3
 - Connection refused → L4
 - SSL error → L6
@@ -56,14 +56,14 @@ Start at L3 → then L4 → then L7
 
 # IP Addressing & Subnetting
 
-## Private IP Ranges
+### Private IP Ranges
 - 10.0.0.0/8
 - 172.16.0.0/12
 - 192.168.0.0/16
 
 Private ≠ Internet routable
 
-## CIDR Quick Math
+### CIDR Quick Math
 - /16 → ~65k IPs
 - /24 → 256 IPs
 - /28 → 16 IPs
@@ -71,14 +71,14 @@ Private ≠ Internet routable
 Rule:
 Smaller number = Bigger network
 
-## Subnet Logic
+### Subnet Logic
 - VPC CIDR → large block
 - Subnet → division
 - No overlap allowed
 - Plan Multi-AZ
 - IP exhaustion stops scaling
 
-## Public vs Private
+### Public vs Private
 Public:
 0.0.0.0/0 → IGW
 
@@ -90,12 +90,12 @@ Uses NAT outbound
 
 # DNS
 
-## Core
+### Core
 - DNS → Name → IP
 - Happens before TCP
 - Uses port 53 (UDP/TCP)
 
-## Records
+### Records
 - A → IPv4
 - AAAA → IPv6
 - CNAME → alias to domain
@@ -107,19 +107,19 @@ CNAME = Domain
 ## Resolution Flow
 Client → Resolver → Authoritative → IP
 
-## TTL
+### TTL
 - Low TTL → fast change
 - High TTL → cache delay
 - High TTL during migration → partial outage
 
-## Debug Order
+### Debug Order
 1. dig domain
 2. Check IP
 3. Check TTL
 4. Follow CNAME
 5. curl -v
 
-## Failure Patterns
+### Failure Patterns
 - NXDOMAIN → missing record
 - Wrong IP → bad A record
 - IP works, domain fails → DNS / TLS
