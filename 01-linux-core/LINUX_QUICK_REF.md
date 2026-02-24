@@ -125,5 +125,20 @@
 - `xfs_growfs /mount` → grow XFS filesystem
 - `fsck /dev/sdX` → filesystem check
 
+## File Search & Disk Debug
+- `find /path -name "file"` → locate missing file
+- `find / -iname "file"` → case-insensitive search
+- `find /path -type f` → only files
+- `find /path -type d` → only directories
+- `find /var -size +100M` → large files
+- `find / -size +1G` → very large files
+- `find /var/log -mtime +30` → old logs
+- `find /var -mtime -1` → recently modified files
+- `du -sh *` → directory size summary
+- `du -ah /var | sort -rh | head` → top space consumers
+- `stat file` → mtime, ctime, owner, inode
+- `ls -li` → inode numbers
+- `lsof | grep deleted` → deleted but still open files
+
 ## Networking & Connectivity
 (add later)
