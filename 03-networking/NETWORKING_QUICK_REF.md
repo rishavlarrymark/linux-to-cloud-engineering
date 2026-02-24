@@ -104,7 +104,7 @@ Rule:
 A = IP
 CNAME = Domain
 
-## Resolution Flow
+### Resolution Flow
 Client → Resolver → Authoritative → IP
 
 ### TTL
@@ -128,7 +128,7 @@ Client → Resolver → Authoritative → IP
 
 ---
 
-# Golden Rules
+## Golden Rules
 
 - Debug in traffic order, not emotion
 - DNS before firewall
