@@ -1,4 +1,4 @@
-# DAY 9 — FILE SEARCH & DISK DEBUG  —  Production Operational Scenarios
+# FILE SEARCH & DISK DEBUG  —  Production Operational Scenarios
 
 ---
 
