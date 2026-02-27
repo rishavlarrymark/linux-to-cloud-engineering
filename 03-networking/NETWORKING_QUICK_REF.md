@@ -1,137 +1,139 @@
-# 🌐 NETWORKING — QUICK RECALL (FOUNDATIONS)
+# 🌐 NETWORKING — QUICK RECALL (Day 1–5)
 
 ---
 
-# How Networking Actually Works
+# — How Networking Works
 
-### Core Concepts
 - Network → devices communicating
-- Client → initiates
+- Client → initiates request
 - Server → responds
 - IP → machine identity
 - Port → service door
-- Protocol → rules
-- TCP → reliable
-- UDP → fast
-
-### Common Ports
-- 80 → HTTP
-- 443 → HTTPS
-- 22 → SSH
-- 53 → DNS
+- Protocol → communication rules
+- TCP → reliable (connection-oriented)
+- UDP → fast (connectionless)
+- Private IP → internal only
+- Public IP → internet reachable
+- Port 80 → HTTP
+- Port 443 → HTTPS
+- Port 22 → SSH
+- Port 53 → DNS
 
 ### Traffic Flow
 Client → DNS → IP → TCP → TLS → HTTP → Response
 
-Rule:
-Debug in traffic order.
+### Failure Signals
+- `Could not resolve host` → DNS issue
+- `Connection refused` → no service
+- `Connection timed out` → firewall / routing
+- Slow response → latency
+
+### Debug Order
+DNS → IP → TCP → TLS → HTTP
 
 ---
 
-# OSI & TCP/IP
+# — OSI & TCP/IP
 
-### OSI Focus (L3–L7)
-- L7 → Application (HTTP, DNS)
-- L6 → TLS
-- L5 → Session
-- L4 → TCP / UDP
 - L3 → IP / Routing
+- L4 → TCP / UDP
+- L5 → Session control
+- L6 → TLS / Encryption
+- L7 → Application (HTTP, DNS, SSH)
+- TCP/IP → Application / Transport / Internet / Network Access
 
-Rule:
-Start at L3 → then L4 → then L7
+### Layer Mapping
+- `No route to host` → L3
+- Port blocked → L4
+- `SSL handshake failed` → L6
+- `5xx error` → L7
+- `Connection refused` → L4
 
-### TCP/IP Model
-- Application
-- Transport
-- Internet
-- Network Access
-
-### Failure Mapping
-- No route → L3
-- Connection refused → L4
-- SSL error → L6
-- 5xx error → L7
+### Debug Order
+L3 → L4 → L6 → L7
 
 ---
 
-# IP Addressing & Subnetting
+# — IP & Subnetting
 
-### Private IP Ranges
+- IPv4 → 32-bit address
+- CIDR → network size indicator
+- /16 → ~65k IPs
+- /24 → 256 IPs
+- /28 → 16 IPs
+- Smaller number → bigger network
+- VPC CIDR → base block
+- Subnet → CIDR division
+- Overlap → routing conflict
+- IP exhaustion → scaling stops
+- 0.0.0.0/0 → default internet route
+
+### Private Ranges
 - 10.0.0.0/8
 - 172.16.0.0/12
 - 192.168.0.0/16
 
-Private ≠ Internet routable
-
-### CIDR Quick Math
-- /16 → ~65k IPs
-- /24 → 256 IPs
-- /28 → 16 IPs
-
-Rule:
-Smaller number = Bigger network
-
-### Subnet Logic
-- VPC CIDR → large block
-- Subnet → division
-- No overlap allowed
-- Plan Multi-AZ
-- IP exhaustion stops scaling
-
 ### Public vs Private
-Public:
-0.0.0.0/0 → IGW
+- Public subnet → route to IGW
+- Private subnet → no IGW
+- NAT → outbound only
 
-Private:
-No IGW
-Uses NAT outbound
-
----
-
-# DNS
-
-### Core
-- DNS → Name → IP
-- Happens before TCP
-- Uses port 53 (UDP/TCP)
-
-### Records
-- A → IPv4
-- AAAA → IPv6
-- CNAME → alias to domain
-
-Rule:
-A = IP
-CNAME = Domain
-
-### Resolution Flow
-Client → Resolver → Authoritative → IP
-
-### TTL
-- Low TTL → fast change
-- High TTL → cache delay
-- High TTL during migration → partial outage
+### Failure Signals
+- Overlapping CIDR → peering fails
+- No IP left → instance launch fails
+- Wrong subnet → unreachable host
 
 ### Debug Order
-1. dig domain
-2. Check IP
-3. Check TTL
-4. Follow CNAME
-5. curl -v
-
-### Failure Patterns
-- NXDOMAIN → missing record
-- Wrong IP → bad A record
-- IP works, domain fails → DNS / TLS
-- Some users fail → TTL cache
-- Temporary failure → port 53 blocked
+Check CIDR → Check Subnet → Check Route
 
 ---
 
-## Golden Rules
+# — DNS
 
-- Debug in traffic order, not emotion
-- DNS before firewall
-- CIDR defines scale
-- Overlap = redesign pain
-- If IP works but domain fails → DNS / TLS
+- DNS → Name to IP
+- Happens before TCP
+- Port 53 → UDP / TCP
+- A → IPv4
+- AAAA → IPv6
+- CNAME → alias
+- TTL → cache duration
+- Resolver → recursive lookup
+
+### Resolution Flow
+Client → Resolver → Root → Authoritative → IP
+
+### Failure Signals
+- `NXDOMAIN` → missing record
+- Wrong IP → bad A record
+- IP works, domain fails → DNS
+- Some users fail → TTL cache
+- `Temporary failure in name resolution` → DNS blocked
+- SSL mismatch after DNS change → cached IP
+
+### Debug Order
+dig → Check IP → TTL → Follow CNAME → curl -v
+
+---
+
+# — Linux Networking (Server Debug)
+
+- `ip a` → check IP & interface state
+- `ip r` → check routing table
+- `ping <gateway>` → test subnet reachability
+- `ping 8.8.8.8` → test internet (L3)
+- `ping domain.com` → test DNS + routing
+- `ss -tuln` → check listening ports
+- `curl localhost` → test local service
+- `curl <private-ip>` → test service exposure
+- `127.0.0.1` → loopback
+- `0.0.0.0` → all interfaces
+- default route → exit path
+
+### Failure Signals
+- `Network unreachable` → routing issue
+- `Connection refused` → no service listening
+- `Connection timed out` → firewall / block
+- `Temporary failure in name resolution` → DNS issue
+
+### Debug Order
+IP → Route → Ping IP → Ping Domain → Port → Service
